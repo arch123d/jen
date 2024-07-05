@@ -1,10 +1,9 @@
-
 pipeline {
     agent any
 
     environment {
-        DOCKERHUB_REPO = 'shan20000/angular'
-        BUILD_TAG    = "Frontend-pipeline"
+        DOCKERHUB_REPO = 'archanadhoti11199315/angular'
+        BUILD_TAG    = "frontend-pipeline"
     }
 
     stages {
