@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Pull Source Code') {
             steps {
-                git 'https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git/frontend'
+                git 'https://github.com/Shantanu20000/DevOps-Fullstack-App-Project-With-Docker.git/frontend/'
             }
         }
 
