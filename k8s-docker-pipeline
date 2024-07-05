@@ -4,6 +4,7 @@ pipeline {
     environment {
         DOCKERHUB_REPO = 'archanadhoti11199315/angular'
         BUILD_TAG    = "frontend-pipeline"
+        DOCKER_CREDENTIALS_ID = 'dockerhub-credentials-id'
     }
 
     stages {
@@ -24,8 +25,8 @@ pipeline {
         stage('Push Docker Image') {
             steps {
                 script {
-                    docker.withRegistry('https://registry.hub.docker.com', credentials('dockerhub-credentials-id')) {
-                        docker.image("${DOCKERHUB_REPO}:${env.BUILD_TAG}").push(v1)
+                    docker.withRegistry('https://index.docker.io/v1/', DOCKER_CREDENTIALS_ID) {
+                        docker.image('archanadhoti11199315/angular:frontend-pipeline').push()
                     }
                 }
             }
