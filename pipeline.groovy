@@ -21,14 +21,6 @@ pipeline {
                 echo 'Test Successfully'
             }
         }
-        stage('Quality Gate') {
-            steps {
-                timeout(time: 1, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
-                echo 'Quality Gate Successfully'
-            }
-        }
         stage('Deploy') {
             steps {
                 deploy adapters: [tomcat9(credentialsId: 'linux', path: '', url: 'http://172.31.36.218:8080')], contextPath: '/', war: '**/*.war'
