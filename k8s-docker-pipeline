@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials-id')
-        DOCKERHUB_REPO = 'shan20000/angular'
-        BUILD_TAG    = "Frontend-pipeline"
+        DOCKERHUB_REPO = 'archanadhoti11199315/angular'
+        BUILD_TAG    = "frontend-pipeline"
         KUBECONFIG_CREDENTIALS = credentials('kubeconfig-credentials-id')
     }
 
