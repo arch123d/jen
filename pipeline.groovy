@@ -15,7 +15,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar-creds') {
+                withSonarQubeEnv(installationName: 'sonar', credentialsId: 'sonar') {
                     sh '/opt/maven/bin/mvn sonar:sonar'
                 }
                 echo 'Test Successfully'
